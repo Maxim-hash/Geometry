@@ -1,0 +1,8 @@
+#ignore object files
+*.o
+
+#ignore exe file
+sfml-app
+
+#ignore compiler's trash
+.vscode
