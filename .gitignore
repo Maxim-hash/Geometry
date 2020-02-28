@@ -4,5 +4,5 @@
 #ignore exe file
 sfml-app
 
-#ignore compiler's trash
+#ignore IDE trash
 .vscode
