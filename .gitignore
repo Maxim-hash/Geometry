@@ -1,8 +1,10 @@
 #ignore object files
-*.o
+main
 
 #ignore exe file
 sfml-app
 
 #ignore IDE trash
 .vscode
+
+
