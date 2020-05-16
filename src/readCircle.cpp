@@ -45,14 +45,6 @@ std::vector<std::string> split(std::string str, char spl)
             p = strtok(NULL, " ");
         }
     }
-    try
-    {
-        if (sizee == 3 || sizee == 8) return res_str;
-        else throw "there is problem with coordinates";
-    }
-    catch (const char* exception)
-    {
-            std::cerr << "Error: " << exception << '\n';
-    }
+    sizee = res_str.size();
     return res_str;
 } 

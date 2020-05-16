@@ -9,7 +9,7 @@ double lenght_of_segment(int x1, int y1, int x2, int y2)
 
 double perimetrs(vector<int> a)
 {
-	double result;
+    double result;
 	double ab, bc, ca;
 	ab = lenght_of_segment(a[0], a[1], a[2], a[3]);
 	bc = lenght_of_segment(a[2], a[3], a[4], a[5]);
@@ -21,18 +21,18 @@ double perimetrs(vector<int> a)
 double areas(vector<int> a)
 {
 	double result;
-	result = 0.5 * (a[0] * (a[3] - a[5]) + a[2] * (a[5] - a[1]) + a[4] * (a[1] - a[3]));
-	return fabs(result);
+    result = 0.5
+            * (a[0] * (a[3] - a[5]) + a[2] * (a[5] - a[1])
+               + a[4] * (a[1] - a[3]));
+    return fabs(result);
 }
 
-char *_strlwr(char *str)
+char* _strlwr(char* str)
 {
-  unsigned char *p = (unsigned char *)str;
-
-  while (*p) {
-     *p = tolower((unsigned char)*p);
-      p++;
-  }
-
-  return str;
+    unsigned char *p = (unsigned char*)str;
+    while (*p) {
+        *p = tolower((unsigned char)*p);
+        p++;
+    }
+    return str;
 } 

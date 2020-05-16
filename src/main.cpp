@@ -34,7 +34,7 @@ void fill_struct(vector<string>& a, char figure[], vector<figures>& res)
 {
     vector<int> b;
     b.resize(a.size());
-    for (int i = 0; i < a.size(); i++)
+    for (int i = 0; i < int(a.size()); i++)
     {
         b[i] = atoi(a[i].c_str());
     }
@@ -144,7 +144,6 @@ void inf_input()
     cout << "Enter N = ";
     cin >> num;
     char tmp[N];
-    char fig[N];
     char coo[N];
     vector<string> res_str;
     vector<figures> result;
@@ -154,7 +153,6 @@ void inf_input()
         while (cin.get() != '\n')
             ;
         cout << "enter circle(x y, r) or triangle ((x1 y1, x2 y2, x3 y3, x1 y1))" << endl;
-        int meetings = 0;
         cin.getline(tmp, 100, '(');
         cin.getline(coo, 100);
         _strlwr(tmp);
