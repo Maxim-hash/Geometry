@@ -2,6 +2,8 @@
 #include "readCircle.h"
 #include <cstdio>
 #include <cstdlib>
+#include <cstring>
+#include <iostream>
 #define N 256
 #define PI 3.14
 using namespace std;
@@ -26,6 +28,71 @@ struct figures
     circle a;
     triangle b;
 };
+
+void fill_struct(vector<string>& a, char figure[], vector<figures>& res)
+{
+    vector<int> b;
+    b.resize(a.size());
+    for (int i = 0; i < a.size(); i++)
+    {
+        b[i] = atoi(a[i].c_str());
+    }
+    int sizee = b.size();
+    if (strcmp("circle", figure) == 0)
+    {
+        try {
+            if (b[sizee-1] > 0)
+            {
+                circle* to_push = new circle;
+                triangle* to_push1 = new triangle;
+                to_push->figure = "circle";
+                to_push->x = b[0];
+                to_push->y = b[1];
+                to_push->r = b[2];
+                to_push->perimeter = 2 * PI * b[2];
+                to_push->area = PI * b[2] * b[2];
+
+                figures* f = new figures;
+                f->a = *to_push;
+                f->b = *to_push1;
+                res.push_back(*f);
+                return;
+            }
+            else throw "invalid input format";
+        }
+        catch (const char* exception)
+        {
+            std::cerr << "Error: " << exception << '\n';
+        }
+    }
+    if (strcmp("triangle", figure) == 0)
+    {
+        try {
+            if (b[sizee-1]==b[1] && b[sizee-2]==b[0])
+            {
+                triangle* to_push = new triangle;
+                circle* to_push1 = new circle;
+                to_push->figure = "triangle";
+                to_push->xy = b;
+                to_push->perimeter = perimetrs(b);
+                to_push->area = areas(b);
+
+                figures* f = new figures;
+                f->b = *to_push;
+                f->a = *to_push1;
+                res.push_back(*f);
+                return;
+            }
+            else throw "invalid input format: check the latest coordinates";
+        }
+        catch (const char* exception)
+        {
+            std::cerr << "Error: " << exception << '\n';
+        }
+    }
+}
+
+
 
 void inf_input()
 {
