@@ -3,6 +3,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
+#include <string.h>
 #include <iostream>
 #define N 256
 #define PI 3.14
@@ -89,6 +90,49 @@ void fill_struct(vector<string>& a, char figure[], vector<figures>& res)
         {
             std::cerr << "Error: " << exception << '\n';
         }
+    }
+}
+
+void print_triangle(triangle* tr)
+{
+    if (tr->figure == "") {
+        return;
+    }
+    cout << "\ttriangle((";
+    int count = 0;
+    for (std::vector<int>::const_iterator i = tr->xy.begin(); i != tr->xy.end();
+         ++i) {
+        std::cout << tr->xy[count];
+        count++;
+        if (count % 2 == 0 && count != 8) {
+            cout << ", ";
+        } else if (count != 8) {
+            cout << " ";
+        }
+    }
+    cout << "))" << endl;
+    cout << "\tperimeter = " << tr->perimeter << endl;
+    cout << "\tarea = " << tr->area << endl;
+}
+void print_circle(circle* c)
+{
+    if (c->figure == "") {
+        return;
+    }
+    cout << "\tcircle(" << c->x << " " << c->y << ", " << c->r << ")" << endl;
+    cout << "\tperimeter = " << c->perimeter << endl;
+    cout << "\tarea = " << c->area << endl;
+}
+
+void print(vector<figures> result)
+{
+    int count = 0;
+    for (std::vector<figures>::iterator i = result.begin(); i != result.end();
+         ++i) {
+        count++;
+        cout << count << ". ";
+        print_circle(&(i->a));
+        print_triangle(&(i->b));
     }
 }
 
