@@ -143,7 +143,9 @@ void inf_input()
     int num = 0;
     cout << "Enter N = ";
     cin >> num;
+    cin.ignore();
     char tmp[N];
+    char fig[N];
     char coo[N];
     vector<string> res_str;
     vector<figures> result;
@@ -152,7 +154,9 @@ void inf_input()
         cin.clear();
         while (cin.get() != '\n')
             ;
-        cout << "enter circle(x y, r) or triangle ((x1 y1, x2 y2, x3 y3, x1 y1))" << endl;
+        cout << "enter circle(x y, r) or triangle ((x1 y1, x2 y2, x3 y3, x1 "
+                "y1)): ";
+        int meetings = 0;
         cin.getline(tmp, 100, '(');
         cin.getline(coo, 100);
         _strlwr(tmp);
@@ -236,8 +240,8 @@ void inf_input()
         }
         fill_struct(res_str, tmp, result);
     next:
-        str = "";
-        coor = "";
+        str = " ";
+        coor = " ";
     }
     cout << endl;
     print(result);
