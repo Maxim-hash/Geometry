@@ -6,7 +6,8 @@
 struct circle;
 struct triangle;
 struct figures;
-void fill_struct(std::vector<std::string>& a, char figure[], std::vector<figures>& res);
+void fill_struct(
+        std::vector<std::string>& a, char figure[], std::vector<figures>& res);
 void print_triangle(triangle* tr);
 void print_circle(circle* c);
 void print(std::vector<figures> result);
