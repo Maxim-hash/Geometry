@@ -1,10 +1,7 @@
+#include "geom.h"
 #include "readCircle.h"
 #include <cstdio>
 #include <cstdlib>
-#include <string>
-#include <exception>
-#include <iostream>
-#include <vector>
 #define N 256
 #define PI 3.14
 using namespace std;
