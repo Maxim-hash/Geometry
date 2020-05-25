@@ -8,7 +8,7 @@ OBJECTS=build/main.o build/geom.o build/readCircle.o build/read-fill.o
 all: $(SOURCES) $(EXECUTABLE)
 
 $(EXECUTABLE): $(OBJECTS)
-	$(CC) $(CFLAGS) $(OBJECTS) -o bin/prog 
+	$(CC) $(CFLAGS) $(OBJECTS) -o bin/prog -lm 
 
 build/main.o: $(SOURCES)
 	$(CC) $(CFLAGS) -c src/main.cpp -o build/main.o

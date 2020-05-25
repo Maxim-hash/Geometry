@@ -1,5 +1,5 @@
 #ignore object files
-bin/
+build/*.o
 
 #ignore exe file
 prog 
@@ -7,5 +7,7 @@ main
 
 #ignore IDE trash
 .vscode
+
+
 
 
