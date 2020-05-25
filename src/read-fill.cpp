@@ -3,8 +3,8 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <string.h>
 #include <iostream>
+#include <string.h>
 #define N 256
 #define PI 3.14
 using namespace std;
@@ -24,8 +24,7 @@ struct triangle {
     double area;
 };
 
-struct figures
-{
+struct figures {
     circle a;
     triangle b;
 };
@@ -34,16 +33,13 @@ void fill_struct(vector<string>& a, char figure[], vector<figures>& res)
 {
     vector<int> b;
     b.resize(a.size());
-    for (int i = 0; i < int(a.size()); i++)
-    {
+    for (int i = 0; i < int(a.size()); i++) {
         b[i] = atoi(a[i].c_str());
     }
     int sizee = b.size();
-    if (strcmp("circle", figure) == 0)
-    {
+    if (strcmp("circle", figure) == 0) {
         try {
-            if (b[sizee-1] > 0)
-            {
+            if (b[sizee - 1] > 0) {
                 circle* to_push = new circle;
                 triangle* to_push1 = new triangle;
                 to_push->figure = "circle";
@@ -58,19 +54,15 @@ void fill_struct(vector<string>& a, char figure[], vector<figures>& res)
                 f->b = *to_push1;
                 res.push_back(*f);
                 return;
-            }
-            else throw "invalid input format";
-        }
-        catch (const char* exception)
-        {
+            } else
+                throw "invalid input format";
+        } catch (const char* exception) {
             std::cerr << "Error: " << exception << '\n';
         }
     }
-    if (strcmp("triangle", figure) == 0)
-    {
+    if (strcmp("triangle", figure) == 0) {
         try {
-            if (b[sizee-1]==b[1] && b[sizee-2]==b[0])
-            {
+            if (b[sizee - 1] == b[1] && b[sizee - 2] == b[0]) {
                 triangle* to_push = new triangle;
                 circle* to_push1 = new circle;
                 to_push->figure = "triangle";
@@ -83,11 +75,9 @@ void fill_struct(vector<string>& a, char figure[], vector<figures>& res)
                 f->a = *to_push1;
                 res.push_back(*f);
                 return;
-            }
-            else throw "invalid input format: check the latest coordinates";
-        }
-        catch (const char* exception)
-        {
+            } else
+                throw "invalid input format: check the latest coordinates";
+        } catch (const char* exception) {
             std::cerr << "Error: " << exception << '\n';
         }
     }
@@ -136,8 +126,6 @@ void print(vector<figures> result)
     }
 }
 
-
-
 void inf_input()
 {
     int num = 0;
@@ -158,80 +146,60 @@ void inf_input()
         cin.getline(tmp, 100, '(');
         cin.getline(coo, 100);
         _strlwr(tmp);
-        if (strcmp("triangle", tmp) == 0)
-        {
+        if (strcmp("triangle", tmp) == 0) {
             int size = strlen(coo);
             try {
-                if (coo[0] == '(' && coo[size - 1] == ')' && coo[size - 2] == ')')
-                {
+                if (coo[0] == '(' && coo[size - 1] == ')'
+                    && coo[size - 2] == ')') {
                     coo[0] = ' ';
                     coo[size - 1] = ' ';
                     coo[size - 2] = ' ';
-                }
-                else
+                } else
                     throw "invalid input format";
-            }
-            catch (const char* exception)
-            {
+            } catch (const char* exception) {
                 std::cerr << "Error: " << exception << '\n';
                 goto next;
             }
         }
-        if (strcmp("circle", tmp) == 0)
-        {
+        if (strcmp("circle", tmp) == 0) {
             int size = strlen(coo);
             try {
-                if (coo[size - 1] == ')')
-                {
+                if (coo[size - 1] == ')') {
                     coo[size - 1] = ' ';
-                }
-                else
+                } else
                     throw "invalid input format";
-            }
-            catch (const char* exception)
-            {
+            } catch (const char* exception) {
                 std::cerr << "Error: " << exception << '\n';
                 goto next;
             }
         }
         try {
-            if (strcmp("circle", tmp) != 0 && strcmp("triangle", tmp) != 0)
-            {
+            if (strcmp("circle", tmp) != 0 && strcmp("triangle", tmp) != 0) {
                 throw "unknown figure";
             }
-        }
-        catch (const char* exception)
-        {
+        } catch (const char* exception) {
             std::cerr << "Error: " << exception << '\n';
             goto next;
         }
         str = string(tmp);
         coor = string(coo);
         res_str = split(coor, ',');
-        if (strcmp("circle", tmp) == 0)
-        {
+        if (strcmp("circle", tmp) == 0) {
             try {
-                if (res_str.size() != 3)
-                {
+                if (res_str.size() != 3) {
                     throw "invalid input format";
                 }
-            }
-            catch (const char* exception)
-            {
+            } catch (const char* exception) {
                 std::cerr << "Error: " << exception << '\n';
                 goto next;
             }
         }
-        if (strcmp("triangle", tmp) == 0)
-        {
+        if (strcmp("triangle", tmp) == 0) {
             try {
-                if (res_str.size() != 8)
-                {
+                if (res_str.size() != 8) {
                     throw "invalid input format";
                 }
-            }
-            catch (const char* exception)
-            {
+            } catch (const char* exception) {
                 std::cerr << "Error: " << exception << '\n';
                 goto next;
             }

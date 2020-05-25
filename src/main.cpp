@@ -4,4 +4,4 @@ int main()
 {
     inf_input();
     return 0;
-} 
+}
