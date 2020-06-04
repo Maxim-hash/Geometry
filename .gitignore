@@ -1,8 +1,9 @@
 #ignore object files
-build/*.o
+build/read-fill.o
+build/readCircle.o
 
 #ignore exe file
-prog 
+prog
 main
 
 #ignore IDE trash
