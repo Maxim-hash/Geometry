@@ -2,7 +2,7 @@
 build/*.o
 
 #ignore exe file
-bin/*
+bin/prog
 
 #ignore IDE trash
 .vscode
