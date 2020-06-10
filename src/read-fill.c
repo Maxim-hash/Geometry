@@ -3,7 +3,7 @@
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
-#include <iostream>
+#include <stdio.h>
 #include <string.h>
 #define N 256
 #define PI 3.14
