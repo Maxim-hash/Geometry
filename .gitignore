@@ -4,7 +4,6 @@ build/readCircle.o
 
 #ignore exe file
 prog
-main
 
 #ignore IDE trash
 .vscode
