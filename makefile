@@ -1,5 +1,5 @@
 CFLAGS = -g -Wall -Werror
-CC = gсс
+CC = g++
 EXECUTABLE = prog
 
 SOURCES = src/main.cpp src/readCircle.cpp src/geom.cpp src/read-fill.cpp

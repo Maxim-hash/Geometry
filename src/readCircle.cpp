@@ -1,6 +1,6 @@
 #include "readCircle.h"
-#include <cstring>
-#include <iostream>
+#include <string.h>
+#include <stdio.h>
 
 std::vector<std::string> split(std::string str, char spl)
 {
