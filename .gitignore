@@ -1,9 +1,8 @@
 #ignore object files
-build/read-fill.o
-build/readCircle.o
+build/*.o
 
 #ignore exe file
-prog
+bin/*
 
 #ignore IDE trash
 .vscode
