@@ -1,7 +1,7 @@
- #ifndef READFILL_H
+#ifndef READFILL_H
 #define READFILL_H
-#include <string>
 #include <string.h>
+#include <string>
 #include <vector>
 using namespace std;
 struct circle {
@@ -31,4 +31,5 @@ void print_triangle(triangle* tr);
 void print_circle(circle* c);
 void print(vector<figures> result);
 void inf_input();
+
 #endif 

@@ -1,6 +1,6 @@
 #include "geom.h"
-#include "readCircle.h"
 #include "intesections.h"
+#include "readCircle.h"
 #include <cstdio>
 #include <cstdlib>
 #include <cstring>
@@ -133,7 +133,7 @@ void print_circle(circle* c, vector<figures> result, int num)
     cout << "\tcircle(" << c->x << " " << c->y << ", " << c->r << ")" << endl;
     cout << "\tperimeter = " << c->perimeter << endl;
     cout << "\tarea = " << c->area << endl;
-        int s = result.size();
+    int s = result.size();
     bool flg;
     for (int i = 0; i < s; i++) {
         if (i + 1 == num) {

@@ -3,6 +3,7 @@
 
 #ignore exe files
 prog
+test
 
 #ignore IDE trash
 .vscode

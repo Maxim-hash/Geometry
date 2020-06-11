@@ -1,4 +1,4 @@
- #ifndef INTESECTIONS_H
+#ifndef INTESECTIONS_H
 #define INTESECTIONS_H
 #include "read-fill.h"
 
@@ -10,4 +10,5 @@ bool inter_segments(
 bool intersections_triangles(triangle* a, triangle* b);
 bool inter_circle_segment(int x1, int y1, int x2, int y2, int x, int y, int r);
 bool inter_circle_triangl(circle* a, triangle* b);
+
 #endif 
