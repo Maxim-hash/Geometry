@@ -1,5 +1,5 @@
  CFLAGS = -Wall -Werror
-CC = g++
+CC = g++ -std=c++11
 EXECUTABLE = bin/prog
 TEST = bin/test
 SOURCES = src/main.cpp src/readCircle.cpp src/geom.cpp src/read-fill.cpp src/intesections.cpp
