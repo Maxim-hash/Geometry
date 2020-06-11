@@ -32,4 +32,4 @@ void print_circle(circle* c);
 void print(vector<figures> result);
 void inf_input();
 
-#endif 
+#endif
