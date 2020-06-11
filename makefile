@@ -5,8 +5,8 @@ TEST = bin/test
 SOURCES = src/main.cpp src/readCircle.cpp src/geom.cpp src/read-fill.cpp src/intesections.cpp
 OBJECTS = build/src/main.o build/src/geom.o build/src/readCircle.o build/src/read-fill.o build/src/intesections.o
 OBJECTS_T = build/test/test_intersect.o
-.PHONY: all clean test prog
-all: $(SOURCES) $(EXECUTABLE) $(TEST)
+.PHONY: all clean test_run run
+all: $(SOURCES) $(EXECUTABLE) $(TEST) test_run
 
 $(EXECUTABLE): $(OBJECTS)
 	$(CC) $(CFLAGS) $(OBJECTS) -o $(EXECUTABLE) -lm
@@ -31,6 +31,11 @@ build/test/test_intersect.o: test/test_intersect.cpp
 
 $(TEST): $(OBJECTS_T) 
 	$(CC) $(CFLAGS) build/src/geom.o build/src/readCircle.o build/src/read-fill.o build/src/intesections.o $(OBJECTS_T) -o bin/test
+
+run: all
+	bin/prog
+test_run:
+	bin/test
 
 clean: 
 	rm -rf build/src/*.o
