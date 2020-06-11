@@ -219,8 +219,14 @@ void inf_input()
         }
         if (strcmp("circle", tmp) == 0) {
             int size = strlen(coo);
+            int commas = 0;
+            for (int i = 0; i < size; i++) {
+                if (coo[i] == ',') {
+                    commas++;
+                }
+            }
             try {
-                if (coo[size - 1] == ')') {
+                if (coo[size - 1] == ')' && commas == 1) {
                     coo[size - 1] = ' ';
                 } else
                     throw "invalid input format";
