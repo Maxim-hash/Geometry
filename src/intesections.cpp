@@ -13,6 +13,7 @@ bool intersections_circles(circle* a, circle* b)
         return false;
     if (d < (r1 + r2))
         return true;
+    return false;
 }
 
 double area_int(int x1, int y1, int x2, int y2, int x3, int y3)
