@@ -10,7 +10,6 @@
 #define PI 3.14
 using namespace std;
 
-
 void fill_struct(vector<string>& a, char figure[], vector<figures>& res)
 {
     vector<int> b;
@@ -85,7 +84,7 @@ void print_triangle(triangle* tr, vector<figures> result, int num)
     cout << "))" << endl;
     cout << "\tperimeter = " << tr->perimeter << endl;
     cout << "\tarea = " << tr->area << endl;
-        int s = result.size();
+    int s = result.size();
     bool flg;
     for (int i = 0; i < s; i++) {
         if (i + 1 == num) {

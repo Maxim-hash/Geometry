@@ -73,5 +73,4 @@ TEST_CASE("intersections of circle and triangle", "[circle and triangle]")
     t_->xy = a;
     REQUIRE(inter_circle_triangl(c_, t_) == true);
     REQUIRE(inter_circle_triangl(c1_, t_) == false);
-
-} 
+}
