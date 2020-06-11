@@ -55,5 +55,22 @@ TEST_CASE("intersections of circles", "[circles]")
     c_->r = 3;
     REQUIRE(intersections_circles(a_, b_) == true);
     REQUIRE(intersections_circles(a_, c_) == false);
-    }
+}
+
+TEST_CASE("intersections of circle and triangle", "[circle and triangle]")
+{
+    vector<int> a = {2, 2, -1, -2, 3, -2, 2, 2};
+    circle* c_ = new circle;
+    circle* c1_ = new circle;
+    triangle* t_ = new triangle;
+    c_->x = 0;
+    c_->y = 0;
+    c_->r = 3;
+    c1_->x = 6;
+    c1_->y = 5;
+    c1_->r = 2;
+    t_->figure = "triangle";
+    t_->xy = a;
+    REQUIRE(inter_circle_triangl(c_, t_) == true);
+    REQUIRE(inter_circle_triangl(c1_, t_) == false);
 } 
