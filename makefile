@@ -5,7 +5,7 @@ TEST = bin/test
 SOURCES = src/main.cpp src/readCircle.cpp src/geom.cpp src/read-fill.cpp src/intesections.cpp
 OBJECTS = build/src/main.o build/src/geom.o build/src/readCircle.o build/src/read-fill.o build/src/intesections.o
 OBJECTS_T = build/test/test_intersect.o
-
+.PHONY: all clean test prog
 all: $(SOURCES) $(EXECUTABLE) $(TEST)
 
 $(EXECUTABLE): $(OBJECTS)
@@ -37,4 +37,3 @@ clean:
 	rm -rf build/test/*.o
 	rm -rf bin/*
 
-.PHONY: all clean 
