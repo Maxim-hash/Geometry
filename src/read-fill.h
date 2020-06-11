@@ -1,36 +1,34 @@
-#ifndef READFILL_H
+ #ifndef READFILL_H
 #define READFILL_H
 #include <string>
+#include <string.h>
 #include <vector>
-
+using namespace std;
 struct circle {
-    std::string figure;
+    string figure;
     int x, y;
     double r;
     double perimeter;
     double area;
-    std::vector<int> inter;
-    std::vector<int> f; // circle -1; tr -2
+    vector<int> inter;
+    vector<int> f; // circle -1; tr -2
 };
 struct triangle {
-    std::string figure;
-    std::vector<int> xy;
+    string figure;
+    vector<int> xy;
     double perimeter;
     double area;
-    std::vector<int> inter;
-    std::vector<int> f;
+    vector<int> inter;
+    vector<int> f;
 };
-
 struct figures {
     circle a;
     triangle b;
 };
 
-
-void fill_struct(
-        std::vector<std::string>& a, char figure[], std::vector<figures>& res);
+void fill_struct(vector<string>& a, char figure[], vector<figures>& res);
 void print_triangle(triangle* tr);
 void print_circle(circle* c);
-void print(std::vector<figures> result);
+void print(vector<figures> result);
 void inf_input();
-#endif
+#endif 
